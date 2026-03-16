@@ -54,7 +54,7 @@ Simulacao5 = (Capital * math.pow((1 + TaxaFundoInvestimentoImobiliario + random.
 
 ValorFundoInvestimentoImobiliario = [Simulacao1, Simulacao2, Simulacao3, Simulacao4, Simulacao5]
 
-MediaFII = statistics.mean(ValorFundoInvestimentoImobiliario)
+MediaFII = statistics.mean ( (ValorFundoInvestimentoImobiliario) )
 MedianaFii = statistics.median(ValorFundoInvestimentoImobiliario)
 DesvioPadraoFII = statistics.stdev(ValorFundoInvestimentoImobiliario)
 
@@ -74,12 +74,10 @@ MetaAtingida = ValorFinalFii >= Meta
 
 CapitalF = locale.currency(Capital,grouping=True)
 TotalInvestidoF = locale.currency(TotalInvestido,grouping=True)
-
 CdbF = locale.currency(MontanteCDB_Liquido,grouping=True)
 LciF = locale.currency(MontanteLCI,grouping=True)
 PoupancaF = locale.currency(MontantePoupanca,grouping=True)
 FiiF = locale.currency(ValorFinalFii,grouping=True)
-
 MediaFiiF = locale.currency(MediaFII,grouping=True)
 DesvioPadraoFIIF = locale.currency(DesvioPadraoFII,grouping=True)
 
@@ -90,29 +88,29 @@ BlocosLCI = int(MontanteLCI / 1000)
 BlocosPoupanca = int(MontantePoupanca / 1000)
 BlocosFII = int(ValorFinalFii / 1000)
 
-GraficoCDB = "█" * BlocosCDB
-GraficoLCI = "█" * BlocosLCI
-GraficoPoupanca = "█" * BlocosPoupanca
-GraficoFII = "█" * BlocosFII
+GraficoCDB = "|" * BlocosCDB
+GraficoLCI = "|" * BlocosLCI
+GraficoPoupanca = "|" * BlocosPoupanca
+GraficoFII = "|" * BlocosFII
 
-#Relatório Final
+#RelatórioFinal
 
-print("===================================")
+print("------------------------------------")
 print("PyInvest - Simulador de Investimentos")
-print("===================================")
+print("------------------------------------")
 
 print()
 
 print("Data da simulação:", DataSimulacao.strftime("%d/%m/%Y"))
 print("Data estimada de resgate:", DataParaResgate.strftime("%d/%m/%Y"))
 
-print("===================================")
+print("------------------------------------")
 
 print()
 print("Total investido:", TotalInvestidoF)
 
 print()
-print("--- RESULTADOS FINANCEIROS ---")
+print("-----Resultados Financeiros-----")
 
 print("CDB:", CdbF)
 print(GraficoCDB)
@@ -130,7 +128,7 @@ print("FII (média):", FiiF)
 print(GraficoFII)
 
 print()
-print("--- ESTATÍSTICAS FII ---")
+print("-----Estatisticas Fii-----")
 
 print("Mediana:", locale.currency(MedianaFii, grouping=True))
 print("Desvio padrão:", DesvioPadraoFIIF)
@@ -138,4 +136,4 @@ print("Desvio padrão:", DesvioPadraoFIIF)
 print()
 print("Meta atingida?", MetaAtingida)
 
-print("===================================")
+print("------------------------------------")
